@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mortgage Mate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.24.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="phone">
+
+    <!-- SPLASH (spinning logo on load) -->
+    <div id="splash" class="splash"><img class="spin-mark" alt="" /><div class="splash-name">Mortgage Mate</div></div>
+    <!-- LOADER overlay (spinning logo while thinking) -->
+    <div id="loader" class="loader hidden"><img class="spin-mark" alt="" /></div>
+    <!-- TOAST -->
+    <div id="toast" class="toast hidden"></div>
+
+    <div class="statusbar">
+      <span>9:41</span>
+      <span><i class="ti ti-antenna-bars-5"></i> <i class="ti ti-wifi"></i> <i class="ti ti-battery-3"></i></span>
+    </div>
+
+    <header class="app-header">
+      <div class="brand" data-tab="dashboard"><img id="brandLogo" class="logo-lockup" alt="Mortgage Mate" /></div>
+      <div class="header-actions">
+        <span class="icon-btn" id="bellBtn"><i class="ti ti-bell"></i><span class="bell-dot"></span></span>
+        <span class="avatar" data-tab="profile"><i class="ti ti-user"></i></span>
+      </div>
+    </header>
+
+    <!-- Notifications panel -->
+    <div id="notifPanel" class="notif-panel hidden">
+      <div class="notif-head">Notifications</div>
+      <div class="notif-item"><i class="ti ti-trending-down"></i><div><b>Prime rate dropped</b><span>Now 6.70% (-0.05) vs last month.</span></div></div>
+      <div class="notif-item"><i class="ti ti-file-check"></i><div><b>Saved scenario ready</b><span>Your last comparison is saved.</span></div></div>
+      <div class="notif-item"><i class="ti ti-bulb"></i><div><b>Tip</b><span>Answer a few questions to match options to your goals.</span></div></div>
+    </div>
+
+    <!-- ============ DASHBOARD ============ -->
+    <section class="screen active" id="screen-dashboard">
+      <div class="title-block"><div><h1>Your Mortgage Dashboard</h1><p class="subtitle">Understand your options. Compare clearly. Make confident decisions.</p></div></div>
+      <div class="snapshot">
+        <div class="snap-top"><div><div class="st-title">Mortgage Snapshot</div><div class="st-sub">Based on your current scenario</div></div><div class="health-pill"><i class="ti ti-circle-check"></i> Within Healthy Range</div></div>
+        <div class="snap-stats">
+          <div class="snap-col"><div class="snap-label">Estimated Monthly Payment</div><div class="snap-val">₪8,200<span class="unit">/mo</span></div><div class="below-pill"><i class="ti ti-arrow-down"></i> ₪400 below your target</div></div>
+          <div class="snap-col"><div class="snap-label">Loan Amount</div><div class="snap-val">₪1,500,000</div><div class="snap-sub">30-Year · Spitzer</div></div>
+          <div class="snap-col"><div class="snap-label">Budget Status</div><div class="gauge-wrap"><svg viewBox="0 0 96 58"><path d="M6 54 A42 42 0 0 1 90 54" fill="none" stroke="#2C4A66" stroke-width="8" stroke-linecap="round"/><path d="M6 54 A42 42 0 0 1 90 54" fill="none" stroke="#7CB36B" stroke-width="8" stroke-linecap="round" stroke-dasharray="103 132"/></svg><div class="gauge-text"><div class="gauge-pct">78%</div><div class="gauge-lbl">Healthy</div></div></div><div class="snap-gauge-sub">Good space to explore</div></div>
+        </div>
+        <div class="snap-foot"><span class="sf-icon"><i class="ti ti-shield-check"></i></span><span class="sf-text">Your front-end ratio is in a comfortable range.</span><span class="sf-link js-toast" data-msg="Front-end ratio: your housing payment vs gross income. Under ~28% is comfortable.">Learn more <i class="ti ti-chevron-right"></i></span></div>
+      </div>
+      <div class="section-h"><h2>What would you like to do today?</h2></div>
+      <div class="action-row" data-tab="translator"><div class="action-icon"><i class="ti ti-file-search"></i></div><div class="action-body"><div class="ar-title">AI Mortgage Translator</div><div class="ar-sub">Turn complex mortgage terms into clear, simple insights.</div></div><span class="action-chev"><i class="ti ti-chevron-right"></i></span></div>
+      <div class="action-row" data-tab="compare"><div class="action-icon"><i class="ti ti-chart-bar"></i></div><div class="action-body"><div class="ar-title">Compare Offers</div><div class="ar-sub">Compare mortgage offers side by side to find the best fit for you.</div></div><span class="action-chev"><i class="ti ti-chevron-right"></i></span></div>
+      <div class="action-row" data-tab="assistant"><div class="action-icon"><i class="ti ti-clipboard-check"></i></div><div class="action-body"><div class="ar-title">Decision Assistant</div><div class="ar-sub">Explore scenarios and key factors to make confident decisions.</div></div><span class="action-chev"><i class="ti ti-chevron-right"></i></span></div>
+      <div class="section-h"><h2>Market Insights</h2><span class="view-all js-toast" data-msg="Market Insights — Prime 6.70%, CPI 2.6%, 10Y bond 4.32%. Full charts coming soon.">View all <i class="ti ti-chevron-right"></i></span></div>
+      <div class="market-row">
+        <div class="market-card"><div class="mc-label">Prime Rate</div><div class="mc-top"><span class="mc-val">6.70%</span><span class="mc-delta"><i class="ti ti-arrow-down"></i>0.05</span></div><div class="mc-spark"><svg viewBox="0 0 90 26" preserveAspectRatio="none"><polyline fill="none" stroke="#5E8A57" stroke-width="1.5" points="0,17 10,13 20,16 30,10 40,14 50,9 60,12 70,8 80,11 90,7"/></svg></div><div class="mc-foot">vs last month</div></div>
+        <div class="market-card"><div class="mc-label">Inflation (CPI)</div><div class="mc-top"><span class="mc-val">2.6%</span><span class="mc-delta"><i class="ti ti-arrow-down"></i>0.10</span></div><div class="mc-spark"><svg viewBox="0 0 90 26" preserveAspectRatio="none"><polyline fill="none" stroke="#5E8A57" stroke-width="1.5" points="0,10 10,13 20,9 30,14 40,11 50,16 60,12 70,17 80,13 90,18"/></svg></div><div class="mc-foot">vs last month</div></div>
+        <div class="market-card"><div class="mc-label">Bond Yield (10Y)</div><div class="mc-top"><span class="mc-val">4.32%</span><span class="mc-delta"><i class="ti ti-arrow-down"></i>0.08</span></div><div class="mc-spark"><svg viewBox="0 0 90 26" preserveAspectRatio="none"><polyline fill="none" stroke="#5E8A57" stroke-width="1.5" points="0,9 10,12 20,8 30,13 40,10 50,12 60,16 70,13 80,17 90,15"/></svg></div><div class="mc-foot">vs last month</div></div>
+      </div>
+    </section>
+
+    <!-- ============ PROPERTY SEARCH ============ -->
+    <section class="screen" id="screen-property">
+      <div class="title-block"><div><h1>Property Search</h1><p class="subtitle">Find your path and check your financial feasibility clearly.</p></div></div>
+      <div class="search-bar"><i class="ti ti-search"></i><input id="propSearch" placeholder="Search by location, property type or keyword…"><i class="ti ti-adjustments-horizontal"></i></div>
+      <div id="propList">
+        <div class="prop-card js-calc" data-calc="First-Time Homebuyer" data-amount="1500000" data-rate="4.5" data-years="30">
+          <div class="prop-illu"><img id="illuHouse" alt=""></div>
+          <div class="prop-body"><div class="prop-title">First-Time Homebuyer Mortgage</div><div class="prop-sub">Explore affordability, estimated payments and get loan ready.</div></div>
+          <span class="action-chev"><i class="ti ti-chevron-right"></i></span>
+        </div>
+        <div class="prop-card js-calc" data-calc="Investment Property" data-amount="2000000" data-rate="5.2" data-years="25">
+          <div class="prop-illu"><img id="illuInvest" alt=""></div>
+          <div class="prop-body"><div class="prop-title">Investment Property</div><div class="prop-sub">Compare investment scenarios and check expected feasibility.</div></div>
+          <span class="action-chev"><i class="ti ti-chevron-right"></i></span>
+        </div>
+        <div class="prop-card js-calc" data-calc="Government Subsidy" data-amount="1200000" data-rate="3.9" data-years="28">
+          <div class="prop-illu"><img id="illuSubsidy" alt=""></div>
+          <div class="prop-body"><div class="prop-title">Government Subsidy &amp; Equity Calculator</div><div class="prop-sub">Check eligibility, available support and your equity readiness.</div></div>
+          <span class="action-chev"><i class="ti ti-chevron-right"></i></span>
+        </div>
+      </div>
+      <div class="tip-card" data-tab="assistant"><span class="tip-icon"><i class="ti ti-bulb"></i></span><div class="tip-body"><div class="tip-title">Helpful tip</div><div class="tip-sub">Answer a few quick questions to see options that match your goals.</div></div><span class="action-chev"><i class="ti ti-chevron-right"></i></span></div>
+    </section>
+
+    <!-- ============ TRANSLATOR ============ -->
+    <section class="screen" id="screen-translator">
+      <div class="title-block"><div><h1>Mortgage<br>Translator</h1><p class="subtitle">Upload and understand your mortgage offer clearly.</p></div><div class="title-decor"><i class="ti ti-file-text"></i><span class="decor-badge"><i class="ti ti-language"></i></span></div></div>
+      <div class="card upload-card" id="dropCard">
+        <div class="cloud"><i class="ti ti-cloud-upload"></i></div>
+        <h2 class="upload-title">Upload your mortgage offer</h2>
+        <p class="upload-hint">PDF, TXT or image · or paste text below</p>
+        <input type="file" id="fileInput" accept=".pdf,.txt,image/*" hidden />
+        <div class="upload-actions">
+          <button id="chooseFile" class="ghost-btn"><i class="ti ti-paperclip"></i> Choose file</button>
+          <a id="sampleLink">load sample</a>
+        </div>
+        <div id="fileName" class="file-name hidden"></div>
+        <textarea id="offerInput" class="offer-input" placeholder="…or paste the text of your bank offer here"></textarea>
+        <button id="analyzeBtn" class="primary-btn"><i class="ti ti-upload"></i> Analyze Document</button>
+        <p class="secure-note"><i class="ti ti-lock"></i> Your documents stay on your device</p>
+      </div>
+      <div class="card"><div class="level-head"><span class="card-title">Explanation Level</span><span class="info-i"><i class="ti ti-info-circle"></i></span></div><div class="level-toggle"><button class="level-btn active" data-level="Basic"><span class="lvl-main">Basic</span><span class="lvl-sub">Simple terms</span></button><button class="level-btn" data-level="Intermediate"><span class="lvl-main">Intermediate</span><span class="lvl-sub">More detail</span></button><button class="level-btn" data-level="Advanced"><span class="lvl-main">Advanced</span><span class="lvl-sub">In-depth</span></button></div></div>
+      <div id="results" class="results"></div>
+      <button class="primary-btn" data-tab="compare">Continue to Compare Offers <i class="ti ti-chevron-right"></i></button>
+    </section>
+
+    <!-- ============ COMPARE ============ -->
+    <section class="screen" id="screen-compare">
+      <div class="title-block"><div><h1>Compare<br>Offers</h1><p class="subtitle">Review your options side by side with clarity.</p></div><div class="title-circle"><i class="ti ti-scale"></i></div></div>
+      <div id="compareResults" class="results"></div>
+    </section>
+
+    <!-- ============ ASSISTANT (AI CHAT) ============ -->
+    <section class="screen" id="screen-assistant">
+      <div class="title-block"><div><h1>Mortgage<br>Assistant</h1><p class="subtitle">Ask anything about your mortgage in plain language.</p></div><div class="title-circle"><i class="ti ti-message-circle"></i></div></div>
+      <div id="aiBanner" class="ai-banner hidden"><i class="ti ti-plug-connected"></i> <span>Demo replies. To chat with the real AI, add your API key in <b>ai.js</b>.</span></div>
+      <div class="card chat-card"><div id="chatMessages" class="chat-messages"></div><div class="chat-input-row"><input type="text" id="chatInput" class="chat-input" placeholder="Ask about Prime, LTV, rate rises…"><button id="chatSend" class="chat-send"><i class="ti ti-send"></i></button></div><div class="chat-suggestions"><button class="chip" data-q="What is Prime?">What is Prime?</button><button class="chip" data-q="What happens if interest rates rise?">If rates rise?</button><button class="chip" data-q="What does index-linked mean?">Index-linked?</button></div></div>
+    </section>
+
+    <!-- ============ PROFILE ============ -->
+    <section class="screen" id="screen-profile">
+      <div class="title-block"><div><h1>Your Profile</h1><p class="subtitle">Your financial profile powers your dashboard and comparisons.</p></div></div>
+      <div class="card profile-head"><div class="profile-avatar">NM</div><div><div class="profile-name">Noa Meir</div><div class="profile-role">First-time homebuyer · Tel Aviv</div></div></div>
+      <div class="card"><div class="card-head"><span class="card-icon"><i class="ti ti-wallet"></i></span><span class="card-title">Financial Profile</span></div>
+        <div class="prof-field"><label>Net monthly income (₪)</label><input type="number" id="pIncome" value="22000"></div>
+        <div class="prof-field"><label>Existing monthly loan payments (₪)</label><input type="number" id="pLoans" value="0"></div>
+        <div class="prof-field"><label>Property type</label><select id="pType"><option value="75">First home (75% LTV)</option><option value="70">Alternative home (70% LTV)</option><option value="50">Investment (50% LTV)</option></select></div>
+        <div class="prof-field"><label>Preferred explanation level</label><select id="pLevel"><option>Basic</option><option>Intermediate</option><option>Advanced</option></select></div>
+        <button id="saveProfile" class="primary-btn" style="margin-top:6px"><i class="ti ti-device-floppy"></i> Save Profile</button>
+      </div>
+      <div class="card"><div class="card-head"><span class="card-icon"><i class="ti ti-calculator"></i></span><span class="card-title">Your Limits (Bank of Israel rules)</span></div>
+        <div class="row"><span class="row-icon"><i class="ti ti-cash"></i></span><span class="row-label">Disposable income</span><span class="row-value" id="pDisp">₪22,000</span></div>
+        <div class="row"><span class="row-icon"><i class="ti ti-percentage"></i></span><span class="row-label">Max monthly payment (38% PTI)</span><span class="row-value" id="pMaxPay">₪8,360</span></div>
+        <div class="row"><span class="row-icon"><i class="ti ti-home"></i></span><span class="row-label">Max financing (LTV)</span><span class="row-value" id="pLtv">75%</span></div>
+      </div>
+    </section>
+
+    <!-- ============ QUICK CALCULATOR MODAL ============ -->
+    <div id="calcModal" class="modal hidden">
+      <div class="modal-card">
+        <div class="modal-head"><span id="calcTitle" class="card-title">Quick Mortgage Calculator</span><button id="calcClose" class="modal-close"><i class="ti ti-x"></i></button></div>
+        <div class="prof-field"><label>Loan amount (₪)</label><input type="number" id="calcAmount" value="1500000"></div>
+        <div class="prof-field"><label>Annual interest rate (%)</label><input type="number" step="0.01" id="calcRate" value="4.5"></div>
+        <div class="prof-field"><label>Years</label><input type="number" id="calcYears" value="30"></div>
+        <div class="calc-result">
+          <div><span class="calc-lbl">Monthly payment</span><span class="calc-val" id="calcMonthly">₪0</span></div>
+          <div><span class="calc-lbl">Total repayment</span><span class="calc-val" id="calcTotal">₪0</span></div>
+        </div>
+        <button id="calcToCompare" class="primary-btn"><i class="ti ti-scale"></i> Compare offers</button>
+      </div>
+    </div>
+
+    <!-- ============ BOTTOM NAV ============ -->
+    <nav class="bottom-nav">
+      <div class="nav-item" data-tab="property"><span class="nav-icon combo"><i class="ti ti-home"></i><i class="ti ti-search"></i></span><span>Property</span></div>
+      <div class="nav-item" data-tab="translator"><span class="nav-icon"><i class="ti ti-language"></i></span><span>Translator</span></div>
+      <div class="nav-item" data-tab="compare"><span class="nav-icon"><i class="ti ti-scale"></i></span><span>Compare</span></div>
+      <div class="nav-item" data-tab="assistant"><span class="nav-icon"><i class="ti ti-message-circle"></i></span><span>Assistant</span></div>
+    </nav>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="assets.js"></script>
+  <script src="glossary.js"></script>
+  <script src="math.js"></script>
+  <script src="ai.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
