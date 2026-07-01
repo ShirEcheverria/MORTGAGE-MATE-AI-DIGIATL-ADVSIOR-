@@ -1,4 +1,4 @@
-# Mortgage Mate — Expanded Mini MVP (₪)
+# Mortgage Mate — Expanded Mini MVP 
 
 A 6-screen mobile-web app styled to the Mortgage Mate screenshots.
 
