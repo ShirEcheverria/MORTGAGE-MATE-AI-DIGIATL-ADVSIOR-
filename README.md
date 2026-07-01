@@ -2,6 +2,9 @@
 
 ![Status](https://img.shields.io/badge/Status-MVP_Live-brightgreen)
 ![Academic Project](https://img.shields.io/badge/Academic_Project-Product_Management_Seminar-blue)
+<img width="1440" height="1440" alt="WhatsApp Image 2026-07-01 at 14 13 37" src="https://github.com/user-attachments/assets/b68bc910-7934-4e46-8588-575c0b8eae0a" />
+
+
 
 **Mortgage Mate** is an innovative fintech educational platform designed to help users understand, compare, and optimize their mortgages. 
 
