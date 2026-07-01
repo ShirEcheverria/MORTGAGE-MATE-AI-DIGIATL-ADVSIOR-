@@ -4,7 +4,7 @@
  * לגרסה המאובטחת (server.js) כדי שהמפתח לא ייחשף. */
 const CONFIG = {
   // 👇👇 הדביקי כאן את המפתח החדש שלך, בין המרכאות 👇👇
-  API_KEY: "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" ,
+  API_KEY: "....." ,
 
   MODEL: "claude-sonnet-4-6"
 };
